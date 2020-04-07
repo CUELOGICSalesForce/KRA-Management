@@ -1,0 +1,14 @@
+<aura:component controller="ParticularKraData" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global"  >
+   <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+   <aura:attribute name="kra" type="createKra__c" access="global"/>
+   <aura:attribute name="kraNameId" type="string" access="global"/>
+   <div >
+   <p>Name:</p>
+   <input type="text" id="kraName" value="{!v.kra.Name}"/>
+   <p>Description:</p>
+   <textarea id="KraDescription" value="{!v.kra.KRA_description__c}"/>
+   <p>Weightage:</p>
+   <input id="KraWeightage" value="{!v.kra.KRA_weightage__c}"/> <br></br> 
+   <lightning:button variant="brand" label="Save" onclick="{! c.handleEdit }" />
+    </div>
+</aura:component>
